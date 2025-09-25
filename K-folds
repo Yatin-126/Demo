@@ -7,7 +7,7 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/Yatin-126/Demo/blob/main/Welcome_To_Colab.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/Yatin-126/Demo/blob/main/K-folds\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
@@ -57,11 +57,11 @@
         "print(f\"Average Accuracy with 5-Fold CV: {np.mean(accuracies):.4f}\")"
       ],
       "metadata": {
-        "id": "S4qcBuGqOYUe",
-        "outputId": "fe49c88a-7aee-47f2-d28a-89c5463eee0e",
         "colab": {
           "base_uri": "https://localhost:8080/"
-        }
+        },
+        "id": "S4qcBuGqOYUe",
+        "outputId": "fe49c88a-7aee-47f2-d28a-89c5463eee0e"
       },
       "execution_count": 16,
       "outputs": [
