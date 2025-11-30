@@ -1,0 +1,101 @@
+Access Control List
+
+access-list 1 deny host <host address>
+access-list 1 permit any
+int fa0/0
+ip access-group 1 out
+exit
+
+
+Dynamic Routing
+
+for router 0:
+router rip
+network 192.168.10.0
+network 10.0.0.0
+
+for router 1:
+router rip
+network 192.168.20.0
+network 10.0.0.0
+
+
+Static Routing
+for router 0
+ip route <destination host *network> <*subnet mask> <next hop value>
+
+for router 1
+ip route <destination host network> <subnet mask> <next hop value>
+
+
+DHCP service
+
+service dhcp
+ip dhcp pool pool1
+network 192.168.20.0 255.255.255.0
+default-router 192.168.20.1
+dns-server 192.168.20.1
+exit
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+
+
+Initial Router Configuration
+
+hostname cserouter
+enable password cse123
+enable secret cse12345
+line console 0
+banner motd $Hello Authorized Access Only$
+line console 0
+password csexyz
+login
+exit
+line vty 0 4
+password csepqr
+login
+exit
+exit
+show running-config
+exit
+
+
+Initial Switch Configuration
+enable
+configure terminal
+hostname cseswitch
+exit
+exit
+enable
+configure terminal
+enable password cse123
+exit
+enable
+cse123
+configure terminal
+enable secret cse12345
+exit
+exit
+enable
+cse12345
+configure terminal
+line console 0
+password csexyz
+login
+exit
+exit
+exit
+csexyz
+enable
+cse12345
+configure terminal
+line vty 0 15
+password csepqr
+login
+
+
+
+
+
+show running-config
+erase startup-config
+ 
